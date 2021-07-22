@@ -1,16 +1,24 @@
 # 6 Կաղապարներ
 
-Your quote here.
-– B. Stroustrup
+_Այստեղ կարող է լինել ձեր մեջբերումը։_
 
-* Introduction
-* Parameterized Types
-  * Constrained Template Arguments; Value Template Arguments; Template Argument Deduction
+_— Բ. Ստրոուստրուպ_
+
+
+* Ներածություն
+* Պարամետրիզացված տիպեր
+    * Constrained Template Arguments;
+    * Value Template Arguments;
+    * Template Argument Deduction
 * Parameterized Operations
-  * Function Templates; Function Objects; Lambda Expressions
+    * Function Templates;
+    * Function Objects;
+    * Lambda Expressions
 * Template Mechanisms
-  * Variable Templates; Aliases; Compile-Time if
-* Advice
+    * Variable Templates;
+    * Aliases;
+    * Compile-Time if
+* Խորհուրդներ
 
 
 ## 6.1 Ներածություն
@@ -70,7 +78,7 @@ Vector<string> vs(17);     // 17 տողերի վեկտոր
 Vector<list<int>> vli(45); // 45 int֊երի ցուցակների վեկտոր
 ```
 
-`Vector<list<int>>` գրառման մեջ `>>` նիշերի զույգը ցույց է տալիս կաղապարի արգումենտների ցուցակի վերջը․ դա սխալ օգտագործված արտածման օպերատորը չէ։ Այլևս անհրաժեշտություն չկա, ինչպես C++98֊ում, երկու `>` նիշերի միջև բացատ թողնել։ 
+`Vector<list<int>>` գրառման մեջ `>>` նիշերի զույգը ցույց է տալիս կաղապարի արգումենտների ցուցակի վերջը․ դա սխալ օգտագործված արտածման օպերատորը չէ։ Այլևս անհրաժեշտություն չկա, ինչպես C++98֊ում, երկու `>` նիշերի միջև բացատ թողնել։
 
 `Vector`֊ները կարող ենք օգտագործել այսպես․
 
@@ -110,7 +118,7 @@ void f2(Vector<string>& vs) // մի քանի տողերի Vector
 
 Նման եղանակով որպես կաղապարներ կարող ենք սահմանել ցուցակները, վեկտորները, արտապատկերումները (այսնքն՝ ասոցեատիվ զանգվածները), չկարգավորված արտապատկերումները (այսինքն՝ հեշավորվող աղյուսակները) և այլն (Chapter 11)։
 
-Կաղապարները կոպիլյացիայի ժամանակի մեխանիզմ են, այսինքն դրանց օգտագործումը, համեմատած ձեռքով գրված կոդի հետ, կատարման ժամանակի որևէ լրացուցիչ ծախս չի պահանջում։ ?? Փաստորեն `Vector<double>`֊ի համար գեներացված կոդը նույնական է 4֊րդ գլխում բերված `Vector`֊ի կոդի հետ։ Ավելին, ստանդարտ գրադարանի `vector<double>`֊ի համար գեներացված կոդն ակնհայտորեն շատ ավելի լավն է լինելու (քանի որ դրա իրականացման վրա շատ ավեիլ ջանք է գործադրված)։
+Կաղապարները կոպիլյացիայի ժամանակի մեխանիզմ են, այսինքն դրանց օգտագործումը, համեմատած ձեռքով գրված կոդի հետ, կատարման ժամանակի որևէ լրացուցիչ ծախս չի պահանջում։ ?? Փաստորեն `Vector<double>`֊ի համար գեներացված կոդը նույնական է 4֊րդ գլխում բերված `Vector`֊ի կոդի հետ։ Ավելին, ստանդարտ գրադարանի `vector<double>`֊ի համար գեներացված կոդն ակնհայտորեն շատ ավելի լավն է լինելու (քանի որ դրա իրականացման վրա շատ ավելի ջանք է գործադրված)։
 
 A template plus a set of template arguments is called an instantiation or a specialization. ?? Late in the compilation process, at instantiation time, code is generated for each instantiation used in a program (§7.5). The code generated is type checked so that the generated code is as type safe as handwritten code. Unfortunately, that type check often occurs late in the compilation process, at instantiation time.
 
